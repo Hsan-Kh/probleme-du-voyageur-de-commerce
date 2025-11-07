@@ -211,6 +211,7 @@ Alternative possible : arrêt après N itérations sans amélioration.
 ## 👨‍💻 Auteur
 
 Projet académique - Comparaison d'algorithmes métaheuristiques pour le TSP
+
 Réalisé par : Hsan Khecharem
 
 ## 📄 Licence
