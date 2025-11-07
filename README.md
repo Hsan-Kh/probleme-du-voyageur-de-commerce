@@ -210,9 +210,16 @@ Alternative possible : arrêt après N itérations sans amélioration.
 
 ## 👨‍💻 Auteur
 
+Réalisé par : Hsan Khecharem
+
+Filière : Licence en Sciences de l’Informatique
+
+Spécialité : Génie Logiciel et Systèmes d’Information
+
+Faculté : Faculté des Sciences de Sfax
+
 Projet académique - Comparaison d'algorithmes métaheuristiques pour le TSP
 
-Réalisé par : Hsan Khecharem
 
 ## 📄 Licence
 
