@@ -69,11 +69,23 @@ Implémente l'algorithme de recherche tabou pour optimiser le parcours.
 ### Utilisation
 ```python
 # Exécution de l'algorithme
-meilleure_solution, meilleure_distance = tabu_search(matrice_distances, nombre_iterations=1000, taille_tabu=50)
+meilleure_solution, meilleure_distance = tabu_search(
+    matrice_distances, 
+    nombre_iterations=1000, 
+    taille_tabu=50
+)
 
 print(f"Meilleure solution trouvée: {meilleure_solution}")
 print(f"Distance minimale: {meilleure_distance}")
 ```
+
+### Affichage attendu
+```
+Meilleure solution trouvée (Recherche Tabou): [2, 3, 4, 7, 8, 9, 5, 0, 1, 6]
+Distance minimale: 17
+```
+
+Le programme affiche directement la meilleure solution trouvée et sa distance totale après avoir exploré l'espace des solutions pendant 1000 itérations.
 
 ### Caractéristiques
 - ✅ Explore systématiquement le voisinage
@@ -107,6 +119,35 @@ P(accepter) = exp(-Δ / T)
 - ✅ Un seul voisin généré par itération
 - ✅ Peu de paramètres à ajuster
 - ✅ Convergence garantie théoriquement
+
+### Affichage attendu
+```
+Distance initiale: 67
+Itération 100, Température: 30.2885, Distance actuelle: 66, Meilleure distance: 28
+Itération 200, Température: 18.3479, Distance actuelle: 37, Meilleure distance: 28
+Itération 300, Température: 11.1146, Distance actuelle: 42, Meilleure distance: 28
+Itération 400, Température: 6.7329, Distance actuelle: 38, Meilleure distance: 25
+Itération 500, Température: 4.0786, Distance actuelle: 35, Meilleure distance: 21
+Itération 600, Température: 2.4707, Distance actuelle: 31, Meilleure distance: 21
+Itération 700, Température: 1.4967, Distance actuelle: 28, Meilleure distance: 21
+Itération 800, Température: 0.9066, Distance actuelle: 22, Meilleure distance: 17
+Itération 900, Température: 0.5492, Distance actuelle: 20, Meilleure distance: 17
+Itération 1000, Température: 0.3327, Distance actuelle: 20, Meilleure distance: 17
+
+Distance minimale trouvée: 17
+
+Meilleure solution trouvée (Recuit Simulé): [4, 3, 2, 9, 1, 0, 5, 6, 8, 7]
+Distance minimale: 17
+```
+
+Le programme affiche :
+- La distance initiale de la solution aléatoire
+- Des mises à jour périodiques (toutes les 100 itérations) montrant :
+  - Le numéro de l'itération
+  - La température courante (qui diminue progressivement)
+  - La distance de la solution actuelle
+  - La meilleure distance trouvée jusqu'ici
+- Le résultat final
 
 ## 🧬 Branche `AlgorithmeGénétique` : Algorithme Génétique
 
@@ -143,6 +184,96 @@ taux_mutation = 0.2            # Probabilité de mutation (20%)
 - ⚠️ Nombreux paramètres à calibrer
 - ⚠️ Plus coûteux en calcul (population entière)
 
+### Affichage attendu
+```
+=== Résolution du TSP avec Algorithme Génétique ===
+
+Test de différentes configurations:
+
+
+--- Configuration: roulette/simple/echange ---
+Sélection: roulette, Croisement: simple, Mutation: echange
+
+Génération 10: Meilleure distance = 24
+Génération 20: Meilleure distance = 23
+Génération 30: Meilleure distance = 18
+Génération 40: Meilleure distance = 18
+Génération 50: Meilleure distance = 18
+Génération 60: Meilleure distance = 18
+Génération 70: Meilleure distance = 18
+Génération 80: Meilleure distance = 18
+Génération 90: Meilleure distance = 18
+Génération 100: Meilleure distance = 18
+
+Distance finale: 18
+Solution: [9, 6, 5, 8, 7, 4, 3, 2, 0, 1]
+Distance: 18
+
+
+--- Configuration: rang/double/inversion ---
+Sélection: rang, Croisement: double, Mutation: inversion
+
+Génération 10: Meilleure distance = 22
+Génération 20: Meilleure distance = 20
+Génération 30: Meilleure distance = 19
+Génération 40: Meilleure distance = 17
+Génération 50: Meilleure distance = 17
+Génération 60: Meilleure distance = 17
+Génération 70: Meilleure distance = 17
+Génération 80: Meilleure distance = 17
+Génération 90: Meilleure distance = 17
+Génération 100: Meilleure distance = 17
+
+Distance finale: 17
+Solution: [8, 7, 4, 3, 2, 9, 1, 0, 5, 6]
+Distance: 17
+
+
+--- Configuration: roulette/barycentrique/insertion ---
+Sélection: roulette, Croisement: barycentrique, Mutation: insertion
+
+Génération 10: Meilleure distance = 25
+Génération 20: Meilleure distance = 24
+Génération 30: Meilleure distance = 20
+Génération 40: Meilleure distance = 20
+Génération 50: Meilleure distance = 17
+Génération 60: Meilleure distance = 17
+Génération 70: Meilleure distance = 17
+Génération 80: Meilleure distance = 17
+Génération 90: Meilleure distance = 17
+Génération 100: Meilleure distance = 17
+
+Distance finale: 17
+Solution: [2, 3, 4, 7, 8, 6, 5, 0, 1, 9]
+Distance: 17
+
+
+--- Configuration: rang/uniforme/echange ---
+Sélection: rang, Croisement: uniforme, Mutation: echange
+
+Génération 10: Meilleure distance = 22
+Génération 20: Meilleure distance = 22
+Génération 30: Meilleure distance = 20
+Génération 40: Meilleure distance = 20
+Génération 50: Meilleure distance = 20
+Génération 60: Meilleure distance = 20
+Génération 70: Meilleure distance = 20
+Génération 80: Meilleure distance = 20
+Génération 90: Meilleure distance = 20
+Génération 100: Meilleure distance = 20
+
+Distance finale: 20
+Solution: [3, 4, 7, 6, 9, 1, 0, 5, 8, 2]
+Distance: 20
+
+```
+
+Le programme teste 4 configurations différentes en affichant :
+- Le type de sélection, croisement et mutation utilisés
+- Des mises à jour toutes les 10 générations montrant la meilleure distance
+- La solution finale et sa distance pour chaque configuration
+- Permet de comparer l'efficacité des différentes combinaisons d'opérateurs
+
 ## 📊 Comparaison des Algorithmes
 
 | Critère | Recherche Tabou | Recuit Simulé | Algo Génétique |
@@ -154,14 +285,61 @@ taux_mutation = 0.2            # Probabilité de mutation (20%)
 | **Paramètres** | 2 | 4 | 5+ |
 | **Vitesse** | Moyenne | Rapide | Lente |
 
+## 🚀 Exécution
 
+### Branche `main` (Recherche Tabou)
+```bash
+git checkout main
+python main.py
+```
+
+### Branche `Méthode_RécuitSimulé`
+```bash
+git checkout Méthode_RécuitSimulé
+python recuit_simule.py
+```
+
+### Branche `AlgorithmeGénétique`
+```bash
+git checkout AlgorithmeGénétique
+python algo_genetique.py
+```
 
 ## 📈 Résultats Attendus
+
+### Format de sortie standard
 
 Chaque algorithme affiche :
 - La meilleure solution trouvée (ordre des villes)
 - La distance minimale du parcours
-- Statistiques de convergence
+- Statistiques de convergence (selon l'algorithme)
+
+### Comparaison visuelle des sorties
+
+| Algorithme | Information affichée | Fréquence |
+|------------|---------------------|-----------|
+| **Recherche Tabou** | Solution finale uniquement | Fin d'exécution |
+| **Recuit Simulé** | Température, distances, progrès | Toutes les 100 itérations |
+| **Algorithme Génétique** | Génération, meilleure distance | Toutes les 10 générations |
+
+### Interprétation des résultats
+
+**Recherche Tabou :**
+- Sortie simple et directe
+- Pas de suivi intermédiaire
+- Résultat stable mais peut manquer l'optimum global
+
+**Recuit Simulé :**
+- Suivi détaillé du refroidissement
+- Température élevée au début → exploration large
+- Température basse à la fin → exploitation locale
+- Pourcentage d'amélioration montrant l'efficacité
+
+**Algorithme Génétique :**
+- Évolution progressive sur les générations
+- Permet de comparer différentes configurations
+- Convergence plus lente mais exploration plus diversifiée
+- Variation des résultats selon les opérateurs utilisés
 
 
 
@@ -219,7 +397,6 @@ Spécialité : Génie Logiciel et Systèmes d’Information
 Faculté : Faculté des Sciences de Sfax
 
 Projet académique - Comparaison d'algorithmes métaheuristiques pour le TSP
-
 
 ## 📄 Licence
 
