@@ -1,8 +1,8 @@
-# 🗺️ Problème du Voyageur de Commerce (TSP)
+#  Problème du Voyageur de Commerce (TSP)
 
 Résolution du Travelling Salesman Problem avec différentes métaheuristiques d'optimisation.
 
-## 📋 Description du Projet
+##  Description du Projet
 
 Ce projet implémente trois algorithmes d'optimisation pour résoudre le problème du voyageur de commerce :
 - **Recherche Tabou** (branche `main`)
@@ -11,7 +11,7 @@ Ce projet implémente trois algorithmes d'optimisation pour résoudre le problè
 
 Le point de départ du projet est l'implémentation de la **recherche tabou**, qui sert de référence pour comparer les performances des autres algorithmes.
 
-## 🎯 Problème
+##  Problème
 
 Le voyageur de commerce doit visiter un ensemble de villes exactement une fois et revenir à son point de départ, en minimisant la distance totale parcourue.
 
@@ -19,7 +19,7 @@ Le voyageur de commerce doit visiter un ensemble de villes exactement une fois e
 - **Nombre de villes** : 10
 - **Matrice de distances** : 10×10 (distances symétriques entre chaque paire de villes)
 
-## 🔍 Branche `main` : Recherche Tabou
+##  Branche `main` : Recherche Tabou
 
 ### Principe
 La recherche tabou évite de revisiter des solutions récentes en maintenant une **liste tabou** qui mémorise les dernières solutions explorées.
@@ -88,13 +88,13 @@ Distance minimale: 17
 Le programme affiche directement la meilleure solution trouvée et sa distance totale après avoir exploré l'espace des solutions pendant 1000 itérations.
 
 ### Caractéristiques
-- ✅ Explore systématiquement le voisinage
-- ✅ Évite les cycles grâce à la liste tabou
-- ✅ Simple à implémenter
-- ⚠️ Génère beaucoup de voisins (n×(n-1)/2)
-- ⚠️ Peut être lent pour de grandes instances
+-  Explore systématiquement le voisinage
+-  Évite les cycles grâce à la liste tabou
+-  Simple à implémenter
+-  (-)Génère beaucoup de voisins (n×(n-1)/2)
+-  (-)Peut être lent pour de grandes instances
 
-## 🔥 Branche `Méthode_RécuitSimulé` : Recuit Simulé
+##  Branche `Méthode_RécuitSimulé` : Recuit Simulé
 
 ### Principe
 Algorithme inspiré du processus physique de recuit métallurgique. Il accepte parfois des solutions moins bonnes pour éviter les minima locaux, avec une probabilité qui diminue au cours du temps (refroidissement).
@@ -115,10 +115,10 @@ P(accepter) = exp(-Δ / T)
 - `T` : température courante
 
 ### Avantages
-- ✅ Échappe aux minima locaux
-- ✅ Un seul voisin généré par itération
-- ✅ Peu de paramètres à ajuster
-- ✅ Convergence garantie théoriquement
+-  Échappe aux minima locaux
+-  Un seul voisin généré par itération
+-  Peu de paramètres à ajuster
+-  Convergence garantie théoriquement
 
 ### Affichage attendu
 ```
@@ -149,7 +149,7 @@ Le programme affiche :
   - La meilleure distance trouvée jusqu'ici
 - Le résultat final
 
-## 🧬 Branche `AlgorithmeGénétique` : Algorithme Génétique
+##  Branche `AlgorithmeGénétique` : Algorithme Génétique
 
 ### Principe
 Algorithme inspiré de l'évolution biologique : une population de solutions évolue par sélection, croisement et mutation.
@@ -178,11 +178,11 @@ taux_mutation = 0.2            # Probabilité de mutation (20%)
 - **Insertion** : Déplacement d'une ville vers une nouvelle position
 
 ### Avantages
-- ✅ Exploration parallèle de l'espace de solutions
-- ✅ Grande flexibilité (nombreux opérateurs)
-- ✅ Élitisme : conservation des meilleures solutions
-- ⚠️ Nombreux paramètres à calibrer
-- ⚠️ Plus coûteux en calcul (population entière)
+-  Exploration parallèle de l'espace de solutions
+-  Grande flexibilité (nombreux opérateurs)
+-  Élitisme : conservation des meilleures solutions
+- (-) Nombreux paramètres à calibrer
+- (-) Plus coûteux en calcul (population entière)
 
 ### Affichage attendu
 ```
@@ -274,7 +274,7 @@ Le programme teste 4 configurations différentes en affichant :
 - La solution finale et sa distance pour chaque configuration
 - Permet de comparer l'efficacité des différentes combinaisons d'opérateurs
 
-## 📊 Comparaison des Algorithmes
+##  Comparaison des Algorithmes
 
 | Critère | Recherche Tabou | Recuit Simulé | Algo Génétique |
 |---------|----------------|---------------|----------------|
@@ -285,7 +285,7 @@ Le programme teste 4 configurations différentes en affichant :
 | **Paramètres** | 2 | 4 | 5+ |
 | **Vitesse** | Moyenne | Rapide | Lente |
 
-## 🚀 Exécution
+##  Exécution
 
 ### Branche `main` (Recherche Tabou)
 ```bash
@@ -305,7 +305,7 @@ git checkout AlgorithmeGénétique
 python algo_genetique.py
 ```
 
-## 📈 Résultats Attendus
+##  Résultats Attendus
 
 ### Format de sortie standard
 
@@ -343,7 +343,7 @@ Chaque algorithme affiche :
 
 
 
-## 📝 Notes Techniques
+##  Notes Techniques
 
 ### Génération de voisins (Tabou)
 La fonction `generer_voisins()` génère **n(n-1)/2** voisins pour une solution de taille n en échangeant chaque paire de villes.
@@ -361,7 +361,7 @@ Plus la distance est courte, plus le fitness est élevé.
 
 Alternative possible : arrêt après N itérations sans amélioration.
 
-## 🎓 Concepts Clés
+##  Concepts Clés
 
 ### Recherche Tabou
 - **Mémoire à court terme** : Liste tabou
@@ -380,13 +380,13 @@ Alternative possible : arrêt après N itérations sans amélioration.
 - **Mutation** : Introduction de nouveauté
 - **Élitisme** : Préservation des meilleures solutions
 
-## 📚 Références
+##  Références
 
 - Glover, F. (1986). "Future paths for integer programming and links to artificial intelligence"
 - Kirkpatrick, S. et al. (1983). "Optimization by Simulated Annealing"
 - Holland, J. H. (1975). "Adaptation in Natural and Artificial Systems"
 
-## 👨‍💻 Auteur
+##  Auteur
 
 Réalisé par : Hsan Khecharem
 
@@ -398,7 +398,7 @@ Faculté : Faculté des Sciences de Sfax
 
 Projet académique - Comparaison d'algorithmes métaheuristiques pour le TSP
 
-## 📄 Licence
+##  Licence
 
 Ce projet est à usage éducatif.
 
